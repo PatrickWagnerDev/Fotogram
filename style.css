@@ -1,0 +1,14 @@
+h1 {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
