@@ -1,14 +1,74 @@
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: white;
     font-weight: bold;
+    text-align: center;
+    padding: var(--title-limitation);
 }
 
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--background-color);
+}
+
+.HeaderSection {
+    display: flex;
+    padding: var(--content-limitation);
+    background-color: var(--secondary-color);
+}
+
+.HeaderSection img {
+    height: clamp(32px, 4vw, 41px);
+    width: auto;
+}
+
+.MainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.FooterSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--content-limitation);
+    background-color: var(--secondary-color);
+    color: #99ACB3;
+    position: relative;
+    overflow: visible;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+}
+
+.FooterSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(20px, 5vw, 40px);
+    background-color: var(--secondary-color);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform: translateY(-70%);
+}
+
+.FooterSection img {
+    height: clamp(24px, 4vw, 31px);
+    width: auto;
+}
+
+
+@media screen and (max-width: 538px) {
+    .HeaderSection {
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .FooterSection {
+        padding: 20px 0;
+    }
 }
