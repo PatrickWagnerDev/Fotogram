@@ -14,9 +14,23 @@ const ALL_IMAGES = [
 ]
 
 const MY_THUMBNAILS = document.getElementById('Thumbnails');
+const IMAGE_DIALOGREF = document.getElementById('ImageDialog');
+const IMAGE_TAG = document.getElementById('ImageName');
 
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
         MY_THUMBNAILS.innerHTML += templateThumbnails(ALL_IMAGES[i]);
     }
+}
+
+function openImageDialog() {
+    IMAGE_DIALOGREF.showModal();
+}
+
+function closeImageDialog() {
+    IMAGE_DIALOGREF.close();
+}
+
+function getImageName() {
+    
 }

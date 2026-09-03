@@ -24,14 +24,12 @@
         </h1>
         <section class="ThumbnailSection" id="Thumbnails"></section>
     </main>
-    <dialog class="DialogSection">
+    <dialog class="DialogSection" id="ImageDialog">
         <header class="DialogHeader">
-            <h2></h2>
-            <img aria-label="Close Button" src="./assets/icon/Close_Button.png" alt="Close Button">
+            <h2 id="ImageName"></h2>
+            <img aria-label="Close Button" onclick="closeImageDialog()" src="./assets/icon/Close_Button.png" alt="Close Button">
         </header>
-        <figure class="DialogImage">
-
-        </figure>
+        <figure class="DialogImage"></figure>
         <footer class="DialogFooter">
             <img aria-label="Previous Foto Button" src="./assets/icon/Arrow_next.png" alt="Previous Foto Button">
             <p></p>
