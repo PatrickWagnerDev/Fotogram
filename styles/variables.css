@@ -2,6 +2,7 @@
     --background-color: #06171E;
     --secondary-color: #09212A;
     --border-style: 2px solid #124658;
+    --border-hover: 2px solid #6BC1E1;
     --border-corner: 16px;
     --content-limitation: 20px max(calc((100% - 1440px)/2), 140px);
     --title-limitation: 56px max(calc((100% - 1440px)/2), 24px);

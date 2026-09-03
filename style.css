@@ -48,6 +48,10 @@ body {
     border-radius: var(--border-corner);
 }
 
+.ThumbnailStyle:hover {
+    border: var(--border-hover);
+}
+
 .FooterSection {
     display: flex;
     flex-direction: column;
