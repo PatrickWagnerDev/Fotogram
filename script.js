@@ -20,7 +20,3 @@ function init() {
         MY_THUMBNAILS.innerHTML += templateThumbnails(ALL_IMAGES[i]);
     }
 }
-
-function templateThumbnails(i) {
-    return `<img class="ThumbnailStyle" src="./assets/image/${i}" alt="Picture: ${i}">`;
-}
