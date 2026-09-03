@@ -32,11 +32,28 @@ body {
     flex: 1;
 }
 
+.ThumbnailSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: var(--content-limitation);
+    gap: 64px 16px;
+}
+
+.ThumbnailStyle {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: var(--border-style);
+    border-radius: var(--border-corner);
+}
+
 .FooterSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: var(--content-limitation);
+    margin-top: 32px;
     background-color: var(--secondary-color);
     color: #99ACB3;
     position: relative;
@@ -61,14 +78,25 @@ body {
     width: auto;
 }
 
-
-@media screen and (max-width: 538px) {
+@media screen and (max-width: 600px) {
     .HeaderSection {
         justify-content: center;
         padding: 20px 0;
     }
 
+     .ThumbnailSection {
+        padding: 0px 20px;
+        gap: 16px;
+    }
+
     .FooterSection {
         padding: 20px 0;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 762px) {
+    .ThumbnailSection {
+        padding: clamp(58px, 4vh, 180px);
+        gap: 16px;
     }
 }
