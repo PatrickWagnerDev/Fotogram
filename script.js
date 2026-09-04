@@ -17,6 +17,7 @@ const IMAGE_DIALOGREF = document.getElementById('ImageDialog');
 const IMAGE_TAG = document.getElementById('ImageName');
 const DIALOG_IMAGE = document.getElementById('ImageID');
 const IMAGE_TITLE = document.getElementById('ImageName');
+const IMAGE_COUNTER = document.getElementById('ImageCounter');
 
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
@@ -26,12 +27,10 @@ function init() {
 
 function openImageDialog(index) {
     IMAGE_DIALOGREF.showModal();
-    IMAGE_TITLE.innerHTML = /*html*/`
-        ${ALL_IMAGES[index]}
-    `;
-    DIALOG_IMAGE.innerHTML = /*html*/`
-        <img src="./assets/image/${ALL_IMAGES[index]}" alt="Picture: ${ALL_IMAGES[index]}">
-    `;
+    IMAGE_TITLE.innerHTML = templateImageTitle(index);
+    DIALOG_IMAGE.innerHTML = templateImage(index);
+    IMAGE_COUNTER.innerHTML = templateCounter(index);
+
 }
 
 function closeImageDialog() {
