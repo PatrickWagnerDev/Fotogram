@@ -17,7 +17,7 @@ const IMAGE_DIALOGREF = document.getElementById('ImageDialog');
 const IMAGE_TAG = document.getElementById('ImageName');
 const DIALOG_IMAGE = document.getElementById('ImageID');
 const IMAGE_TITLE = document.getElementById('ImageName');
-const IMAGE_COUNTER = document.getElementById('ImageCounter');
+const FOOTER_DIALOG = document.getElementById('FooterDialog');
 
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
@@ -27,12 +27,33 @@ function init() {
 
 function openImageDialog(index) {
     IMAGE_DIALOGREF.showModal();
-    IMAGE_TITLE.innerHTML = templateImageTitle(index);
-    DIALOG_IMAGE.innerHTML = templateImage(index);
-    IMAGE_COUNTER.innerHTML = templateCounter(index);
-
+    setDialog(index);
 }
 
 function closeImageDialog() {
     IMAGE_DIALOGREF.close();
+}
+
+function setDialog(index) {
+    IMAGE_TITLE.innerHTML = templateImageTitle(index);
+    DIALOG_IMAGE.innerHTML = templateImage(index);
+    FOOTER_DIALOG.innerHTML = templateFooter(index);
+    const IMAGE_COUNTER = document.getElementById('ImageCounter');
+    IMAGE_COUNTER.innerHTML = templateCounter(index);
+}
+
+function nextImage(index) {
+    if (index == ALL_IMAGES.length) {
+        setDialog(0);
+    } else {
+        setDialog(index);
+    }
+}
+
+function previousImage(index) {
+    if (index == -1) {
+        setDialog(ALL_IMAGES.length-1);
+    } else {
+        setDialog(index);
+    }
 }

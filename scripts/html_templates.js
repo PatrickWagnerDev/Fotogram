@@ -16,8 +16,16 @@ function templateImage(i) {
     `;
 }
 
+function templateFooter(i) {
+    return /*html*/`
+        <img aria-label="Previous Foto Button" class="PreviousArrow" onclick="previousImage(${i - 1})" src="./assets/icon/Arrow_next.png" alt="Previous Foto Button">
+        <p class="CounterStyle" id="ImageCounter"></p>
+        <img aria-label="Next Foto Button" class="NextArrow" onclick="nextImage(${i + 1})" src="./assets/icon/Arrow_next.png" alt="Next Foto Button">
+    `;
+}
+
 function templateCounter(i) {
     return /*html*/`
-        ${i+1} / ${ALL_IMAGES.length}
+        ${i + 1} / ${ALL_IMAGES.length}
     `;
 }
