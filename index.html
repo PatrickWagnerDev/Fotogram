@@ -24,14 +24,16 @@
         </h1>
         <section class="ThumbnailSection" id="Thumbnails"></section>
     </main>
-    <dialog class="DialogSection" id="ImageDialog">
-        <header class="DialogHeader">
-            <h2 class="ImageTitle" id="ImageName"></h2>
-            <img aria-label="Close Button" onclick="closeImageDialog()" src="./assets/icon/Close_Button.png"
-                alt="Close Button">
-        </header>
-        <figure class="DialogImage" id="ImageID"> </figure>
-        <footer class="DialogFooter" id="FooterDialog"></footer>
+    <dialog class="DialogSection" id="ImageDialog" onclick="closeImageDialog()">
+        <main class="DialogContainer" onclick="stopBubblingDialog(event)">
+            <header class="DialogHeader">
+                <h2 class="ImageTitle" id="ImageName"></h2>
+                <img aria-label="Close Button" onclick="closeImageDialog()" src="./assets/icon/Close_Button.png"
+                    alt="Close Button">
+            </header>
+            <figure class="DialogImage" id="ImageID"> </figure>
+            <footer class="DialogFooter" id="FooterDialog"></footer>
+        </main>
     </dialog>
     <footer class="FooterSection">
         <section class="DALogo">

@@ -34,6 +34,10 @@ function closeImageDialog() {
     IMAGE_DIALOGREF.close();
 }
 
+function stopBubblingDialog(event) {
+    event.stopPropagation();
+}
+
 function setDialog(index) {
     IMAGE_TITLE.innerHTML = templateImageTitle(index);
     DIALOG_IMAGE.innerHTML = templateImage(index);
