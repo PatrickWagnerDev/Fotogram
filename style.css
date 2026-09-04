@@ -1,7 +1,7 @@
 h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: white;
-    font-weight: bold;
+    font-weight: strong;
     text-align: center;
     padding: var(--title-limitation);
 }

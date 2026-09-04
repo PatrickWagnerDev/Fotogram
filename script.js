@@ -1,3 +1,4 @@
+// array for rendering the images
 const ALL_IMAGES = [
     "image_1.webp",
     "image_2.webp",
@@ -12,14 +13,19 @@ const ALL_IMAGES = [
     "image_11.webp",
     "image_12.webp"
 ]
+
+// Variable for DOM-Manipulation
 const MY_THUMBNAILS = document.getElementById('Thumbnails');
 const IMAGE_DIALOGREF = document.getElementById('ImageDialog');
 const IMAGE_TAG = document.getElementById('ImageName');
 const DIALOG_IMAGE = document.getElementById('ImageID');
 const IMAGE_TITLE = document.getElementById('ImageName');
 const FOOTER_DIALOG = document.getElementById('FooterDialog');
+
+// Variable needed for next and previous Button accessebility
 let currentIndex = 0;
 
+// Thumbnail render and keyboard accessibility for Thumbnails
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
         MY_THUMBNAILS.innerHTML += templateThumbnails(i);
@@ -35,6 +41,7 @@ function init() {
     initDialogEnterKey();
 }
 
+// add accessibility for buttons in dialog for image viewer
 function initDialogEnterKey() {
     const CLOSE_BUTTON = document.querySelector('.CloseButton');
     CLOSE_BUTTON.addEventListener('keydown', (event) => {
@@ -56,19 +63,23 @@ function initDialogEnterKey() {
     });
 }
 
+// opens dialog for image viewer and start setDialog()
 function openImageDialog(index) {
     IMAGE_DIALOGREF.showModal();
     setDialog(index);
 }
 
+// close dialog for image viewer
 function closeImageDialog() {
     IMAGE_DIALOGREF.close();
 }
 
+// needed for the function to close dialogs by clicking outside the dialog / stops event-bubbling
 function stopBubblingDialog(event) {
     event.stopPropagation();
 }
 
+// renders the interior of the dialog for image viewer
 function setDialog(index) {
     currentIndex = index;
     IMAGE_TITLE.innerHTML = templateImageTitle(index);
@@ -77,6 +88,7 @@ function setDialog(index) {
     IMAGE_COUNTER.innerHTML = templateCounter(index);
 }
 
+// Function to switch to the next image in the dialog for image viewer
 function nextImage() {
     currentIndex++;
     if (currentIndex == ALL_IMAGES.length) {
@@ -86,6 +98,7 @@ function nextImage() {
     }
 }
 
+// Function to switch to the previous image in the dialog for image viewer
 function previousImage() {
     currentIndex--;
     if (currentIndex == -1) {
