@@ -28,11 +28,17 @@
         <main class="DialogContainer" onclick="stopBubblingDialog(event)">
             <header class="DialogHeader">
                 <h2 class="ImageTitle" id="ImageName"></h2>
-                <img aria-label="Close Button" onclick="closeImageDialog()" src="./assets/icon/Close_Button.png"
+                <img aria-label="Close Button" class="CloseButton" onclick="closeImageDialog()" tabindex="0"
                     alt="Close Button">
             </header>
             <figure class="DialogImage" id="ImageID"> </figure>
-            <footer class="DialogFooter" id="FooterDialog"></footer>
+            <footer class="DialogFooter" id="FooterDialog">
+                <img aria-label="Previous Foto Button" class="PreviousArrow" onclick="previousImage()" tabindex="0"
+                    alt="Previous Foto Button">
+                <p class="CounterStyle" id="ImageCounter"></p>
+                <img aria-label="Next Foto Button" class="NextArrow" onclick="nextImage()" tabindex="0"
+                    alt="Next Foto Button">
+            </footer>
         </main>
     </dialog>
     <footer class="FooterSection">

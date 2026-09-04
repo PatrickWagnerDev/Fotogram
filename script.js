@@ -18,11 +18,42 @@ const IMAGE_TAG = document.getElementById('ImageName');
 const DIALOG_IMAGE = document.getElementById('ImageID');
 const IMAGE_TITLE = document.getElementById('ImageName');
 const FOOTER_DIALOG = document.getElementById('FooterDialog');
+let currentIndex = 0;
 
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
         MY_THUMBNAILS.innerHTML += templateThumbnails(i);
     }
+    const ALL_THUMBNAILS = document.querySelectorAll('#Thumbnails img');
+    ALL_THUMBNAILS.forEach((card, index) => {
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                openImageDialog(index);
+            }
+        });
+    });
+    initDialogEnterKey();
+}
+
+function initDialogEnterKey() {
+    const CLOSE_BUTTON = document.querySelector('.CloseButton');
+    CLOSE_BUTTON.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            closeImageDialog();
+        }
+    });
+    const NEXT_ARROW = document.querySelector('.NextArrow');
+    NEXT_ARROW.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            nextImage();
+        }
+    });
+    const PRIVIOUS_ARROW = document.querySelector('.PreviousArrow');
+    PRIVIOUS_ARROW.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            previousImage();
+        }
+    });
 }
 
 function openImageDialog(index) {
@@ -39,25 +70,27 @@ function stopBubblingDialog(event) {
 }
 
 function setDialog(index) {
+    currentIndex = index;
     IMAGE_TITLE.innerHTML = templateImageTitle(index);
     DIALOG_IMAGE.innerHTML = templateImage(index);
-    FOOTER_DIALOG.innerHTML = templateFooter(index);
     const IMAGE_COUNTER = document.getElementById('ImageCounter');
     IMAGE_COUNTER.innerHTML = templateCounter(index);
 }
 
-function nextImage(index) {
-    if (index == ALL_IMAGES.length) {
+function nextImage() {
+    currentIndex++;
+    if (currentIndex == ALL_IMAGES.length) {
         setDialog(0);
     } else {
-        setDialog(index);
+        setDialog(currentIndex);
     }
 }
 
-function previousImage(index) {
-    if (index == -1) {
-        setDialog(ALL_IMAGES.length-1);
+function previousImage() {
+    currentIndex--;
+    if (currentIndex == -1) {
+        setDialog(ALL_IMAGES.length - 1);
     } else {
-        setDialog(index);
+        setDialog(currentIndex);
     }
 }
