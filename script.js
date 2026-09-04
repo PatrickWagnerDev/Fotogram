@@ -16,15 +16,23 @@ const ALL_IMAGES = [
 const MY_THUMBNAILS = document.getElementById('Thumbnails');
 const IMAGE_DIALOGREF = document.getElementById('ImageDialog');
 const IMAGE_TAG = document.getElementById('ImageName');
+const DIALOG_IMAGE = document.getElementById('ImageID');
+const IMAGE_TITLE = document.getElementById('ImageName');
 
 function init() {
     for (let i = 0; i < ALL_IMAGES.length; i++) {
-        MY_THUMBNAILS.innerHTML += templateThumbnails(ALL_IMAGES[i]);
+        MY_THUMBNAILS.innerHTML += templateThumbnails(i);
     }
 }
 
-function openImageDialog() {
+function openImageDialog(index) {
     IMAGE_DIALOGREF.showModal();
+    IMAGE_TITLE.innerHTML = /*html*/`
+        ${ALL_IMAGES[index]}
+    `;
+    DIALOG_IMAGE.innerHTML = /*html*/`
+        <img src="./assets/image/${ALL_IMAGES[index]}" alt="Picture: ${ALL_IMAGES[index]}">
+    `;
 }
 
 function closeImageDialog() {

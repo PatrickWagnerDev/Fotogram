@@ -47,6 +47,23 @@ body {
 .DialogHeader {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 48px;
+}
+
+.ImageTitle {
+    color: white;
+}
+
+.DialogImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.DialogImage img {
+    max-width: 100%;
+    height: auto;
 }
 
 .ThumbnailSection {
@@ -63,11 +80,12 @@ body {
     object-fit: cover;
     border: var(--border-style);
     border-radius: var(--border-corner);
-}
 
-.ThumbnailStyle:hover {
-    border: var(--border-hover);
-    cursor: pointer;
+    &:hover {
+        border: var(--border-hover);
+        scale: 1.2;
+        cursor: pointer;
+    }
 }
 
 .FooterSection {
