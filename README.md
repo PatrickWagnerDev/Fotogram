@@ -15,14 +15,11 @@ The project is intended for educational purposes only and is not planned for pro
 
 * HTML
 * CSS
-* Vanilla JavaScript
+* JavaScript
 
 ## Project Status
 
-> **Current Status:** Initial project setup
-
-The basic folder and file structure has been created. Required images, icons, and fonts have been added to the project.
-
+> **Current Status:** Project completed and submitted for review
 <!--
 PROJECT STATUS:
 Update only the "Current Status" and the text above whenever the project progresses.
