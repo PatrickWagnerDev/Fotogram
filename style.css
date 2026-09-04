@@ -33,15 +33,20 @@ body {
 }
 
 .DialogSection {
+    display: none;
+}
+
+.DialogSection[open] {
     display: flex;
     flex-direction: column;
     position: fixed;
+    gap: 48px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--secondary-color);
     width: 700px;
-    height: 650px;
+    height: 700px;
     border-radius: 40px;
     padding: 56px 64px;
     box-sizing: border-box;
@@ -50,7 +55,6 @@ body {
 .DialogHeader {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 48px;
 }
 
 .ImageTitle {
@@ -62,18 +66,19 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .DialogImage img {
-    object-fit: contain;
     max-height: 100%;
+    max-width: 100%;
 }
 
 .DialogFooter {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 48px;
 }
 
 .ThumbnailSection {
